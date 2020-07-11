@@ -17,54 +17,21 @@
                 </p>
             </div>
         </div>
+        <!-- featured posts here (maximum four) -->
         <div class="row">
+            {% for obj in object_list %}
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
                 <div class="tm-content-box">
-                    <img src="{% static 'img/tm-img-310x180-1.jpg' %}" alt="Image" class="tm-margin-b-20 img-fluid" />
-                    <h4 class="tm-margin-b-20 tm-gold-text">Lorem ipsum dolor #1</h4>
+                    <img src="{{ obj.thumbnail.url }}" alt="Image" class="tm-margin-b-20 img-fluid" />
+                    <h4 class="tm-margin-b-20 tm-gold-text">{{ obj.title }}</h4>
                     <p class="tm-margin-b-20">
-                        Aenean cursus tellus mauris, quis consequat mauris dapibus id.
-                        Donec scelerisque porttitor pharetra
-                    </p>
-                    <a href="#" class="tm-btn text-uppercase">Detail</a>
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
-                <div class="tm-content-box">
-                    <img src="{% static 'img/tm-img-310x180-2.jpg' %}" alt="Image" class="tm-margin-b-20 img-fluid" />
-                    <h4 class="tm-margin-b-20 tm-gold-text">Lorem ipsum dolor #2</h4>
-                    <p class="tm-margin-b-20">
-                        Aenean cursus tellus mauris, quis consequat mauris dapibus id.
-                        Donec scelerisque porttitor pharetra
+                        {{ obj.overview }}
                     </p>
                     <a href="#" class="tm-btn text-uppercase">Read More</a>
                 </div>
             </div>
+            {% endfor %}
 
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
-                <div class="tm-content-box">
-                    <img src="{% static 'img/tm-img-310x180-3.jpg' %}" alt="Image" class="tm-margin-b-20 img-fluid" />
-                    <h4 class="tm-margin-b-20 tm-gold-text">Lorem ipsum dolor #3</h4>
-                    <p class="tm-margin-b-20">
-                        Aenean cursus tellus mauris, quis consequat mauris dapibus id.
-                        Donec scelerisque porttitor pharetra
-                    </p>
-                    <a href="#" class="tm-btn text-uppercase">Detail</a>
-                </div>
-            </div>
-
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
-                <div class="tm-content-box">
-                    <img src="{% static 'img/tm-img-310x180-4.jpg' %}" alt="Image" class="tm-margin-b-20 img-fluid" />
-                    <h4 class="tm-margin-b-20 tm-gold-text">Lorem ipsum dolor #4</h4>
-                    <p class="tm-margin-b-20">
-                        Aenean cursus tellus mauris, quis consequat mauris dapibus id.
-                        Donec scelerisque porttitor pharetra
-                    </p>
-                    <a href="#" class="tm-btn text-uppercase">Read More</a>
-                </div>
-            </div>
         </div>
         <!-- row -->
 
@@ -159,65 +126,30 @@
                         <div class="row tm-2-rows-md-down-1 tm-margin-t-mid">
                             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                 <h3 class="tm-gold-text tm-title tm-margin-b-30">
-                                    Related Posts
+                                    Latest Posts
                                 </h3>
+                                {% for post in latest %}
                                 <div class="media tm-related-post">
                                     <div class="media-left media-middle">
                                         <a href="#">
-                                            <img class="media-object" src="img/tm-img-240x120-1.jpg"
+                                            <img class="media-object" src="{{ post.thumbnail.url }}"
                                                 alt="Generic placeholder image" />
                                         </a>
                                     </div>
                                     <div class="media-body">
                                         <a href="#">
                                             <h4 class="media-heading tm-gold-text tm-margin-b-15">
-                                                Lorem ipsum dolor
+                                                {{ post.title }}
                                             </h4>
                                         </a>
                                         <p class="tm-small-font tm-media-description">
-                                            Aenean cursus tellus mauris, quis consequat mauris
-                                            dapibus id. Donec scelerisque porttitor pharetra.
+                                            {{ post.overview }}
                                         </p>
                                     </div>
                                 </div>
-                                <div class="media tm-related-post">
-                                    <div class="media-left media-middle">
-                                        <a href="#">
-                                            <img class="media-object" src="img/tm-img-240x120-2.jpg"
-                                                alt="Generic placeholder image" />
-                                        </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <a href="#">
-                                            <h4 class="media-heading tm-gold-text tm-margin-b-15">
-                                                Lorem ipsum dolor
-                                            </h4>
-                                        </a>
-                                        <p class="tm-small-font tm-media-description">
-                                            Aenean cursus tellus mauris, quis consequat mauris
-                                            dapibus id. Donec scelerisque porttitor pharetra.
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="media tm-related-post">
-                                    <div class="media-left media-middle">
-                                        <a href="#">
-                                            <img class="media-object" src="img/tm-img-240x120-3.jpg"
-                                                alt="Generic placeholder image" />
-                                        </a>
-                                    </div>
-                                    <div class="media-body">
-                                        <a href="#">
-                                            <h4 class="media-heading tm-gold-text tm-margin-b-15">
-                                                Lorem ipsum dolor
-                                            </h4>
-                                        </a>
-                                        <p class="tm-small-font tm-media-description">
-                                            Aenean cursus tellus mauris, quis consequat mauris
-                                            dapibus id. Donec scelerisque porttitor pharetra.
-                                        </p>
-                                    </div>
-                                </div>
+                                {% endfor %}
+
+
                             </div>
                         </div>
                     </div>

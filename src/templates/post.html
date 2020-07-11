@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="tm-section">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 col-xl-9">
+
+            </div>
+            <div class="row tm-margin-t-big">
+                <aside class="col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 tm-aside-r">
+
+                    <div class="tm-aside-container">
+                        <h3 class="tm-gold-text tm-title">
+                            Categories
+                        </h3>
+                        <nav>
+                            <ul class="nav">
+                                {% for category in categories %}
+                                <li>
+                                    <a href="#" class="tm-text-link">{{ category.categories__title }}</a>
+                                    <span style="float:right">{{ category.categories__title__count }}</span>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </nav>
+
+                        {% for post in featured %}
+                        <hr class="tm-margin-t-small">
+                        <div class="tm-content-box tm-margin-t-small">
+                            <a href="{{ post.get_absolute_url }}" class="tm-text-link">
+                                <h4 class="tm-margin-b-20 tm-thin-font">{{ post.title }}</h4>
+                            </a>
+                            <p class="tm-margin-b-30">{{ post.overview }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}

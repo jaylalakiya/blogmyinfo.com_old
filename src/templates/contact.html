@@ -43,7 +43,6 @@
                 <section class="tm-margin-t-mid tm-map-section">
                     <h3 class="tm-gold-text tm-form-title">Pellentesque fermentum mauris</h3>
 
-                    <div id="google-map"></div>
 
                     <p class="tm-form-description">Morbi vel pharetra massa, non iaculis tortor. Nulla porttitor
                         tincidunt felis et feugiat. Vivamus fermentum ligula justo, sit amet blandit nisl volutpat
@@ -71,12 +70,12 @@
                             </h3>
                             <nav>
                                 <ul class="nav">
-                                    <li><a href="#" class="tm-text-link">Lorem ipsum dolor sit</a></li>
-                                    <li><a href="#" class="tm-text-link">Tincidunt non faucibus placerat</a></li>
-                                    <li><a href="#" class="tm-text-link">Vestibulum tempor ac lectus</a></li>
-                                    <li><a href="#" class="tm-text-link">Elementum egestas dui</a></li>
-                                    <li><a href="#" class="tm-text-link">Nam in augue consectetur</a></li>
-                                    <li><a href="#" class="tm-text-link">Text Link Color #006699</a></li>
+                                    {% for category in categories %}
+                                    <li>
+                                        <a href="#" class="tm-text-link">{{ category.categories__title }}</a>
+                                        <span style="float:right">{{ category.categories__title__count }}</span>
+                                    </li>
+                                    {% endfor %}
                                 </ul>
                             </nav>
                             <hr class="tm-margin-t-small">
@@ -98,27 +97,13 @@
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-
+                        <h3 class="tm-gold-text tm-title">Best performing post</h3>
                         <div class="tm-content-box tm-content-box-contact">
-                            <img src="{% static 'img/tm-img-310x180-1.jpg' %}" alt="Image"
-                                class="tm-margin-b-20 img-fluid">
-                            <h4 class="tm-margin-b-20 tm-gold-text">Lorem ipsum dolor #1</h4>
-                            <p class="tm-margin-b-20 tm-p-small">Aenean cursus tellus mauris, quis
-                                consequat mauris dapibus id. Donec
-                                scelerisque porttitor pharetra</p>
-                            <a href="#" class="tm-btn text-uppercase">Detail</a>
+                            <img src="{{ best_post.thumbnail.url }}" alt="Image" class="tm-margin-b-20 img-fluid">
+                            <h4 class="tm-margin-b-20 tm-gold-text">{{ best_post.title }}</h4>
+                            <p class="tm-margin-b-20 tm-p-small">{{ best_post.overview }}</p>
+                            <a href="{{ best_post.get_absolute_url }}" class="tm-btn text-uppercase">Read Now</a>
                         </div>
-
-                        <div class="tm-content-box tm-margin-t-mid tm-content-box-contact">
-                            <img src="{% static 'img/tm-img-310x180-2.jpg' %}" alt="Image"
-                                class="tm-margin-b-20 img-fluid">
-                            <h4 class="tm-margin-b-20 tm-gold-text">Lorem ipsum dolor #2</h4>
-                            <p class="tm-margin-b-20 tm-p-small">Aenean cursus tellus mauris, quis
-                                consequat mauris dapibus id. Donec
-                                scelerisque porttitor pharetra</p>
-                            <a href="#" class="tm-btn text-uppercase">Read More</a>
-                        </div>
-
                     </div>
                 </div>
                 <hr class="tm-margin-t-mid">
@@ -126,52 +111,29 @@
                     <div class="col-xs-12">
 
                         <div class="tm-contact-related-posts-container">
-                            <h3 class="tm-gold-text tm-title tm-margin-b-30">Related Posts</h3>
+                            <h3 class="tm-gold-text tm-title tm-margin-b-30">Latest Posts</h3>
+
+                            {% for post in latest %}
                             <div class="media tm-related-post">
                                 <div class="media-left media-middle">
-                                    <a href="#">
-                                        <img class="media-object" src="img/tm-img-240x120-1.jpg"
-                                            alt="Generic placeholder image">
+                                    <a href="{{ post.get_absolute_url }}">
+                                        <img class="media-object" src="{{ post.thumbnail.url }}"
+                                            alt="Generic placeholder image" />
                                     </a>
                                 </div>
                                 <div class="media-body">
-                                    <a href="#">
-                                        <h4 class="media-heading tm-gold-text tm-margin-b-15">Lorem ipsum dolor</h4>
+                                    <a href="{{ post.get_absolute_url }}">
+                                        <h4 class="media-heading tm-gold-text tm-margin-b-15">
+                                            {{ post.title }}
+                                        </h4>
                                     </a>
-                                    <p class="tm-small-font tm-media-description">Aenean cursus tellus mauris, quis
-                                        consequat mauris dapibus id. Donec scelerisque porttitor pharetra.</p>
+                                    <p class="tm-small-font tm-media-description">
+                                        {{ post.overview }}
+                                    </p>
                                 </div>
                             </div>
-                            <div class="media tm-related-post">
-                                <div class="media-left media-middle">
-                                    <a href="#">
-                                        <img class="media-object" src="img/tm-img-240x120-2.jpg"
-                                            alt="Generic placeholder image">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <a href="#">
-                                        <h4 class="media-heading tm-gold-text tm-margin-b-15">Lorem ipsum dolor</h4>
-                                    </a>
-                                    <p class="tm-small-font tm-media-description">Aenean cursus tellus mauris, quis
-                                        consequat mauris dapibus id. Donec scelerisque porttitor pharetra.</p>
-                                </div>
-                            </div>
-                            <div class="media tm-related-post">
-                                <div class="media-left media-middle">
-                                    <a href="#">
-                                        <img class="media-object" src="img/tm-img-240x120-3.jpg"
-                                            alt="Generic placeholder image">
-                                    </a>
-                                </div>
-                                <div class="media-body">
-                                    <a href="#">
-                                        <h4 class="media-heading tm-gold-text tm-margin-b-15">Lorem ipsum dolor</h4>
-                                    </a>
-                                    <p class="tm-small-font tm-media-description">Aenean cursus tellus mauris, quis
-                                        consequat mauris dapibus id. Donec scelerisque porttitor pharetra.</p>
-                                </div>
-                            </div>
+                            {% endfor %}
+
                         </div>
 
                     </div>
