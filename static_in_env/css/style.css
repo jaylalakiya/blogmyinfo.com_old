@@ -258,6 +258,7 @@ hr {
   border-top: 1px solid #cccccc;
 }
 p {
+  text-align: justify;
   line-height: 1.9;
 }
 

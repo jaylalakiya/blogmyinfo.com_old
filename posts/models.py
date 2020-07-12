@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 
+from ckeditor.fields import RichTextField
 
 User = get_user_model()
 
@@ -22,11 +23,16 @@ class Category(models.Model):
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=100)
-    overview = models.TextField()
+    title = models.CharField(
+        max_length=50, default='max_length is 50 characters')
+    meta_description = models.CharField(
+        max_length=200, default='max_length is 200 characters')
+    overview = models.CharField(
+        max_length=120, default='max_length is 120 characters')
+    content = RichTextField(default='Enter your content here')
     timestamp = models.DateTimeField(auto_now_add=True)
-    comment_count = models.IntegerField(default=0)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    # comment_count = models.IntegerField(default=0)
+    author = models.ForeignKey(User, default='beast', on_delete=models.CASCADE)
     thumbnail = models.ImageField()
     categories = models.ManyToManyField(Category)
     featured = models.BooleanField(default=False)

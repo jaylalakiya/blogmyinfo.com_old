@@ -13,10 +13,12 @@ def get_category_count():
 def index(request):
     featured = Post.objects.filter(featured=True)[0:4]
     latest_five = Post.objects.order_by('-timestamp')[0:5]
+    category_count = get_category_count()
 
     context = {
         'object_list': featured,
         'latest': latest_five,
+        'categories': category_count,
     }
     return render(request, "index.html", context)
 
