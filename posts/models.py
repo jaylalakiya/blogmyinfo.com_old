@@ -44,3 +44,11 @@ class Post(models.Model):
         return reverse('post-detail', kwargs={
             'id': self.id
         })
+
+
+class News(models.Model):
+    title = models.CharField(max_length=150, default="title")
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
