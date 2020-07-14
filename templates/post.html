@@ -10,8 +10,8 @@
                 <div>
                     <h1 class="tm-gold-text tm-header-inner">{{ post.title }}</h1>
                     <p>{{ post.overview }}</p>
-                    <!-- TODO thumbnail image -->
-                    <p class="tm-margin-b-20">{{ post.content | safe }}</p>
+                    <img src="{{ post.thumbnail.url }}" alt="Thumbnail image" class="tm-margin-b-30 img-fluid">
+                    <div class="tm-margin-b-20">{{ post.content | safe }}</div>
                 </div>
             </div>
 
