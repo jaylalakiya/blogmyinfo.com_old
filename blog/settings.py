@@ -126,12 +126,12 @@ MEDIA_URL = '/media/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static_in_env')]
 
 # ! uncomment below when pushing to git
-# STATIC_ROOT = os.path.join(BASE_DIR, ' static_root')
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
+STATIC_ROOT = os.path.join(BASE_DIR, ' static_root')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 # ! uncomment above when pushing to git
 
 # ! comment below when pushing to git
-VENV_DIRS = os.path.dirname(BASE_DIR)
-STATIC_ROOT = os.path.join(VENV_DIRS, ' static_root')
-MEDIA_ROOT = os.path.join(VENV_DIRS, 'media_root')
+# VENV_DIRS = os.path.dirname(BASE_DIR)
+# STATIC_ROOT = os.path.join(VENV_DIRS, ' static_root')
+# MEDIA_ROOT = os.path.join(VENV_DIRS, 'media_root')
 # ! comment above when pushing to git
