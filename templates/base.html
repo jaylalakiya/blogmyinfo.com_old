@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xml:lang="en">
 
-{% include "head.html" %}
+<head>
+    {% block page_meta_info %}
+    <!-- here page info (description and keywords are corresponded) -->
+    {% endblock page_meta_info %}
+
+    {% include "head.html" %}
+
+</head>
 
 <body>
     <style>

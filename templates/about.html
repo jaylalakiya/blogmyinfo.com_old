@@ -1,6 +1,12 @@
-{% extends "base.html" %}
-{% load static %}
+{% extends "base.html" %} {% load static %}
 
+{% block page_meta_info %}
+<meta name='description'
+    content="see more about blogmyinfo here. blogmyinfo is the one of the best technology and programming based blog site" />
+<meta name='keywords' content="technology, programming, coding, blog, tech, web development, about us, about page" />
+{% endblock page_meta_info %}
+
+<!-- main block corresponding to base.html BODY -->
 {% block content %}
 <div class="tm-about-img-container">
 
