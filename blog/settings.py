@@ -65,25 +65,25 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-if DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
+# if DEBUG:
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'jaylalakiya$blogmyinfo_database',
-            'USER': 'jaylalakiya',
-            'PASSWORD': 'jAyuD@tabAse01',
-            'HOST': 'jaylalakiya.mysql.pythonanywhere-services.com',
-            'TEST': {
-                'NAME': 'jaylalakiya$test_blogmyinfo_database'}
-        }
-    }
+}
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.mysql',
+#             'NAME': 'jaylalakiya$blogmyinfo_database',
+#             'USER': 'jaylalakiya',
+#             'PASSWORD': 'jAyuD@tabAse01',
+#             'HOST': 'jaylalakiya.mysql.pythonanywhere-services.com',
+#             'TEST': {
+#                 'NAME': 'jaylalakiya$test_blogmyinfo_database'}
+#         }
+#     }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
