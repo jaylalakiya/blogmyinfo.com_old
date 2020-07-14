@@ -79,7 +79,7 @@ else:
             'NAME': 'jaylalakiya$blogmyinfo_database',
             'USER': 'jaylalakiya',
             'PASSWORD': 'jAyuD@tabAse01',
-            'HOST': 'jaylalakiya',
+            'HOST': 'jaylalakiya.mysql.pythonanywhere-services.com',
             'TEST': {
                 'NAME': 'jaylalakiya$test_blogmyinfo_database'}
         }
