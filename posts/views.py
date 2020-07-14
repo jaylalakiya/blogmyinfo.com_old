@@ -1,5 +1,5 @@
 from django.db.models import Count
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Post
 from random import randint
 
@@ -56,9 +56,11 @@ def contact(request):
 def post(request, id):
     category_count = get_category_count()
     featured = Post.objects.filter(featured=True)[7:12]
+    post = get_object_or_404(Post, id=id)
 
     context = {
         'categories': category_count,
         'featured': featured,
+        'post': post
     }
     return render(request, "post.html", context)
