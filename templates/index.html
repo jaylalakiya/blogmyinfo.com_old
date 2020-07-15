@@ -19,8 +19,9 @@
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-xs-center">
                 <h1 class="tm-gold-text tm-title">Introduction</h1>
                 <p class="tm-subtitle">
-                    Suspendisse ut magna vel velit cursus tempor ut nec nunc. Mauris
-                    vehicula, augue in tincidunt porta, purus ipsum blandit massa.
+                    We are currently in development and working to make this blog not just blog but a System. If you
+                    found some issue, we are waiting for you to contact us through contact tab. Thank you much for
+                    visiting here, You're really appreciated.
                 </p>
             </div>
         </div>
@@ -46,22 +47,15 @@
                 <div class="tm-2-col-left">
                     <h2 class="tm-gold-text tm-title tm-bold">Best Performing Post</h2>
                     <h3 class="tm-gold-text tm-title" style="margin-top: 1.1em;">
-                        title of the best performing post
+                        {{ best_post.title }}
                     </h3>
-                    <img src="{% static 'img/tm-img-660x330-1.jpg' %}" alt="Image" class="tm-margin-b-40 img-fluid" />
                     <p>
-                        overview overview overview overview overview overview overview
-                        overview overview overview overview overview overview overview
-                        overview overview
+                        {{ best_post.overview }}
                     </p>
+                    <img src="{{ best_post.thumbnail.url }}" alt="Image" class="tm-margin-b-40 img-fluid" />
                     <p>
-                        overview overview overview overview overview overview overview
-                        overview overview overview overview overview overview overview
-                        overview overview overview overview overview overview overview
-                        overview overview overview overview overview overview overview
-                        overview overview
+                        {{ best_post.content | safe }}
                     </p>
-                    <a href="{{ best_post.get_absolute_url }}" class="tm-btn text-uppercase">Read More</a>
                 </div>
             </div>
 
@@ -88,9 +82,9 @@
                             <!-- col -->
 
                             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 tm-xs-m-t" style="
-                  border-right: 1px solid goldenrod;
-                  border-left: 1px solid goldenrod;
-                ">
+                                border-right: 1px solid goldenrod;
+                                border-left: 1px solid goldenrod;
+                                ">
                                 <h3 class="tm-gold-text tm-title">
                                     Useful Links
                                 </h3>
