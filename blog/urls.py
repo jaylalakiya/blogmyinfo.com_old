@@ -9,7 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
     path('blog/', blog, name='post-list'),
-    path('post/<id>/', post, name='post-detail'),
+    path('post/<title>/', post, name='post-detail'),
     path('about/', about),
     path('contact/', contact),
 ]

@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block page_meta_info %}
+<meta name='description' content="{{ post.meta_description }}" />
+<meta name='keywords' content="{{ post.meta_keywords }}" />
+{% endblock page_meta_info %}
+
 {% block content %}
 <section class="tm-section">
     <div class="container-fluid">

@@ -27,6 +27,8 @@ class Post(models.Model):
         max_length=50, default='max_length is 50 characters')
     meta_description = models.CharField(
         max_length=200, default='max_length is 200 characters')
+    meta_keywords = models.TextField(
+        default='Enter the keywords like: word1, word2, word3,...')
     overview = models.CharField(
         max_length=120, default='max_length is 120 characters')
     content = RichTextField(default='Enter your content here')
@@ -42,7 +44,7 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse('post-detail', kwargs={
-            'id': self.id
+            'title': self.title
         })
 
 

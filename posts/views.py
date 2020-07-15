@@ -64,10 +64,10 @@ def contact(request):
     return render(request, "contact.html", context)
 
 
-def post(request, id):
+def post(request, title):
     category_count = get_category_count()
     featured = Post.objects.filter(featured=True)[7:12]
-    post = get_object_or_404(Post, id=id)
+    post = get_object_or_404(Post, title=title)
     news_list = News.objects.order_by('-timestamp')[0:3]
 
     context = {
