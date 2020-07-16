@@ -42,21 +42,26 @@ def blog(request):
 
 def about(request):
     news_list = News.objects.order_by('-timestamp')[0:3]
+    latest_three = Post.objects.order_by('-timestamp')[0:3]
+
+    featured_two = Post.objects.filter(featured=True)[0:2]
 
     contex = {
-        'news_list': news_list
+        'news_list': news_list,
+        'latest_posts': latest_three,
+        'featured_posts': featured_two,
     }
     return render(request, "about.html", contex)
 
 
 def contact(request):
-    latest_two = Post.objects.order_by('-timestamp')[0:2]
+    latest_three = Post.objects.order_by('-timestamp')[0:3]
     category_count = get_category_count()
     best_post = Post.objects.filter(featured=True)[randint(0, 10)]
     news_list = News.objects.order_by('-timestamp')[0:3]
 
     context = {
-        'latest': latest_two,
+        'latest': latest_three,
         'categories': category_count,
         'best_post': best_post,
         'news_list': news_list
