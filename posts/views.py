@@ -1,7 +1,9 @@
 from django.db.models import Count
 from django.shortcuts import render, get_object_or_404
-from .models import Post, News
 from random import randint
+
+from .models import Post, News
+from contacts.models import ContactUser
 
 
 def get_category_count():
@@ -65,7 +67,23 @@ def contact(request):
         'categories': category_count,
         'best_post': best_post,
         'news_list': news_list
+
     }
+
+    # for actual form data
+    if request.method == 'POST':
+        contact_name = request.POST['contact_name']
+        contact_email = request.POST['contact_email']
+        contact_subject = request.POST['contact_subject']
+        contact_message = request.POST['contact_message']
+
+        new_contact = ContactUser()
+        new_contact.name = contact_name
+        new_contact.email = contact_email
+        new_contact.subject = contact_subject
+        new_contact.message = contact_message
+        new_contact.save()
+
     return render(request, "contact.html", context)
 
 

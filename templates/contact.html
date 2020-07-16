@@ -10,23 +10,22 @@
 
 <!-- main block corresponding to base.html BODY -->
 {% block content %}
-<div class="tm-contact-img-container">
-
-</div>
-
 <section class="tm-section">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
 
                 <section>
-                    <h3 class="tm-gold-text tm-form-title">Pellentesque fermentum mauris</h3>
-                    <p class="tm-form-description">Vivamus accumsan blandit ligula. Sed lobortis efficitur sapien.
-                        Quisque vel sem eu turpis ullamcorper euismod. Praesent quis nisi ac augue luctus viverra.
-                        Sed et dui nisi. Fusce vitae dapibus justo.</p>
+                    <h3 class="tm-gold-text tm-form-title">Get in touch with blogmyinfo</h3>
+                    <p class="tm-form-description">Fill in the contact form and we will contact you on provided email.
+                        Kindly try to be specific with the subject field of the form.
+                        <br>
+                        One should contact for any suggestion, bug or issue, Advertising with us, copyright permissions,
+                        or we are open for anything other than this too.
+                    </p>
 
 
-                    <form action="index.html" method="post" class="tm-contact-form">
+                    <form action="." method="POST" class="tm-contact-form"> {% csrf_token %}
                         <div class="form-group">
                             <input type="text" id="contact_name" name="contact_name" class="form-control"
                                 placeholder="Name" required />
@@ -49,20 +48,23 @@
                 </section>
 
                 <section class="tm-margin-t-mid tm-map-section">
-                    <h3 class="tm-gold-text tm-form-title">Pellentesque fermentum mauris</h3>
+                    <h3 class="tm-gold-text tm-form-title">Open for your contributions</h3>
 
 
-                    <p class="tm-form-description">Morbi vel pharetra massa, non iaculis tortor. Nulla porttitor
-                        tincidunt felis et feugiat. Vivamus fermentum ligula justo, sit amet blandit nisl volutpat
-                        id.</p>
+                    <p class="tm-form-description">Hey, currently I am the only individual person maintaining
+                        <strong>everything</strong> ranging from website development to maintanance to content
+                        management to SEO to everything.</p>
+                    <p> I am 19 years old currently pursuing Bachlor of Engineering.</p>
 
-                    <p class="m-b-0">Donec mattis ipsum in erat viverra commodo.
-                        Proin sapien lacus, euismod eget nisl in,
-                        elementum posuere massa. Curabitur a odio
-                        eros. Cras aliquam lectus erat, non semper est
-                        volutpat eget. Ut eget erat tincidunt.</p>
+                    <p class="m-b-0">I respectfully welcome you to be a part of team If you are willing to do so. I am
+                        kind of polymath person who eagerly wants to learn every possible things. So, I am looking
+                        forward for a person who finds the things crazy and can go mad over to learn and execute
+                        something.</p>
 
-                    <a href="#" class="tm-btn tm-margin-t-small">Detail</a>
+                    <p class="m-b-0 tm-margin-t-small"><strong><u>Contact for this purpose with subject as
+                                "TEAM".</u></strong></p>
+
+                    <!-- <a href="#" class="tm-btn tm-margin-t-small">Detail</a> -->
                 </section>
 
 
@@ -105,7 +107,7 @@
                     </div>
 
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                        <h3 class="tm-gold-text tm-title">Best for you</h3>
+                        <h3 class="tm-gold-text tm-title">Trending post</h3>
                         <div class="tm-content-box tm-content-box-contact">
                             <img src="{{ best_post.thumbnail.url }}" alt="Image" class="tm-margin-b-20 img-fluid">
                             <h4 class="tm-margin-b-20 tm-gold-text">{{ best_post.title }}</h4>

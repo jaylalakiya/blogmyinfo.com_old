@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'ckeditor',
 
     'posts',
+    'contacts',
 ]
 
 SITE_ID = 1
