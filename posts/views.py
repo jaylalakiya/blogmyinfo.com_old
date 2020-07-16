@@ -1,6 +1,5 @@
 from django.db.models import Count
 from django.shortcuts import render, get_object_or_404
-from random import randint
 
 from .models import Post, News
 from contacts.models import ContactUser
@@ -59,7 +58,8 @@ def about(request):
 def contact(request):
     latest_three = Post.objects.order_by('-timestamp')[0:3]
     category_count = get_category_count()
-    best_post = Post.objects.filter(featured=True)[randint(0, 10)]
+    # TODO fix the selection of best post on some basis rather than selecting from featured
+    best_post = Post.objects.filter(featured=True)[0:1]
     news_list = News.objects.order_by('-timestamp')[0:3]
 
     context = {
