@@ -11,7 +11,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '1wcb&qxj6iec4ek$v=^jq$p3!64u^jhypm$2t$nlozyirarmtb'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'www.blogmyinfo.com']
 
@@ -29,10 +29,13 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
 
     'ckeditor',
+    'ckeditor_uploader',
 
     'posts',
     'contacts',
 ]
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
 
 SITE_ID = 1
 

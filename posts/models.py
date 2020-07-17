@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse
 
 from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 User = get_user_model()
 
@@ -31,7 +32,7 @@ class Post(models.Model):
         default='Enter the keywords like: word1, word2, word3,...')
     overview = models.CharField(
         max_length=120, default='max_length is 120 characters')
-    content = RichTextField(default='Enter your content here')
+    content = RichTextUploadingField(default='Enter your content here')
     timestamp = models.DateTimeField(auto_now_add=True)
     # comment_count = models.IntegerField(default=0)
     author = models.ForeignKey(User, default='beast', on_delete=models.CASCADE)
