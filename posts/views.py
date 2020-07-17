@@ -16,12 +16,14 @@ def index(request):
     latest_five = Post.objects.order_by('-timestamp')[0:5]
     category_count = get_category_count()
     news_list = News.objects.order_by('-timestamp')[0:3]
+    best_post = Post.objects.all()[0]
 
     context = {
         'object_list': featured,
         'latest': latest_five,
         'categories': category_count,
         'news_list': news_list
+        'best_post': best_post
     }
     return render(request, "index.html", context)
 
