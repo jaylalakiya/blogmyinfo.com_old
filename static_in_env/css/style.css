@@ -99,14 +99,8 @@ h2 {
   height: 500px;
 }
 
-.tm-about-img-container {
-  background-image: url("../img/tm-about-img.jpg");
-}
 .tm-blog-img-container {
   background-image: url("../img/tm-blog-img.jpg");
-}
-.tm-contact-img-container {
-  background-image: url("../img/tm-contact-img.jpg");
 }
 
 .tm-about-img-container,
