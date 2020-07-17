@@ -78,17 +78,17 @@ DATABASES = {
     }
 }
 # else:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.mysql',
-#             'NAME': 'jaylalakiya$blogmyinfo_database',
-#             'USER': 'jaylalakiya',
-#             'PASSWORD': 'jAyuD@tabAse01',
-#             'HOST': 'jaylalakiya.mysql.pythonanywhere-services.com',
-#             'TEST': {
-#                 'NAME': 'jaylalakiya$test_blogmyinfo_database'}
-#         }
-#     }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'jaylalakiya$default',
+        'USER': 'jaylalakiya',
+        'PASSWORD': 'jAyuD@tabAse01',
+        'HOST': 'jaylalakiya.mysql.pythonanywhere-services.com',
+        'TEST': {
+                'NAME': 'jaylalakiya$test_default'}
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
