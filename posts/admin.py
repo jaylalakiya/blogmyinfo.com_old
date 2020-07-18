@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Author, Category, Post, News,
+from .models import Author, Category, Post, News
 
 admin.site.register(Author)
 admin.site.register(Category)
