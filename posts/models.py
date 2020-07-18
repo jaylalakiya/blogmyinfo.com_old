@@ -16,6 +16,14 @@ class Author(models.Model):
         return self.user.username
 
 
+class PostView(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    post = models.ForeignKey('Post', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user.username
+
+
 class Category(models.Model):
     title = models.CharField(max_length=20)
 
@@ -34,6 +42,7 @@ class Post(models.Model):
         max_length=120, default='max_length is 120 characters')
     content = RichTextUploadingField(default='Enter your content here')
     timestamp = models.DateTimeField(auto_now_add=True)
+    # view_count = models.IntegerField(default=0)
     # comment_count = models.IntegerField(default=0)
     author = models.ForeignKey(User, default='beast', on_delete=models.CASCADE)
     thumbnail = models.ImageField()
@@ -47,6 +56,10 @@ class Post(models.Model):
         return reverse('post-detail', kwargs={
             'title': self.title
         })
+
+    @property
+    def view_count(self):
+        return PostView.objects.filter(post=self).count()
 
 
 class News(models.Model):
