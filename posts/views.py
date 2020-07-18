@@ -16,7 +16,7 @@ def index(request):
     latest_five = Post.objects.order_by('-timestamp')[0:5]
     category_count = get_category_count()
     news_list = News.objects.order_by('-timestamp')[0:3]
-    best_post = Post.objects.order_by('view_count')[0]
+    best_post = Post.objects.order_by('-timestamp')[0]
 
     context = {
         'object_list': featured,
