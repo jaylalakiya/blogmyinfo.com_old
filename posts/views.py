@@ -95,6 +95,8 @@ def post(request, title):
     post = get_object_or_404(Post, title=title)
     news_list = News.objects.order_by('-timestamp')[0:3]
 
+    PostView.objects.get_or_create(user=request.user, post=post)
+
     context = {
         'categories': category_count,
         'featured': featured,
