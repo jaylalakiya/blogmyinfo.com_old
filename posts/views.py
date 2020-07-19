@@ -89,10 +89,10 @@ def contact(request):
     return render(request, "contact.html", context)
 
 
-def post(request, title):
+def post(request, slug_text):
     category_count = get_category_count()
     featured = Post.objects.filter(featured=True)[7:12]
-    post = get_object_or_404(Post, title=title)
+    post = get_object_or_404(Post, slug=slug_text)
     news_list = News.objects.order_by('-timestamp')[0:3]
 
     context = {
