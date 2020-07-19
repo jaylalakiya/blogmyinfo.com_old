@@ -13,7 +13,7 @@ def get_category_count():
 
 def index(request):
     featured = Post.objects.filter(featured=True)[0:4]
-    latest_five = Post.objects.order_by('-timestamp')[0:5]
+    latest_five = Post.objects.order_by('-timestamp')[1:5]
     category_count = get_category_count()
     news_list = News.objects.order_by('-timestamp')[0:3]
     best_post = Post.objects.order_by('-timestamp')[0]
