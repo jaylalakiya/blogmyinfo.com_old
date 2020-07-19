@@ -16,7 +16,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index),
     path('blog/', blog, name='post-list'),
-    path('post/<slug:slug_text>/', post, name='post-detail'),
+    path('post/<slug:slug>/', post, name='post-detail'),
     path('about/', about),
     path('contact/', contact),
     path('robots.txt', TemplateView.as_view(
