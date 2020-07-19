@@ -126,10 +126,8 @@
                                 {% for post in latest %}
                                 <div class="media tm-related-post">
                                     <div class="media-left media-middle">
-                                        <a href="{{ post.get_absolute_url }}">
-                                            <img class="media-object" src="{{ post.thumbnail.url }}"
-                                                alt="Generic placeholder image" />
-                                        </a>
+                                        <img class="media-object" src="{{ post.thumbnail.url }}"
+                                            alt="Generic placeholder image" />
                                     </div>
                                     <div class="media-body">
                                         <a href="{{ post.get_absolute_url }}">
